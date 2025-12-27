@@ -1,0 +1,9 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.dart": "${basename}.freezed.dart,${basename}.g.dart"
+    },
+    "cSpell.words": [
+        "svgs"
+    ]
+}
