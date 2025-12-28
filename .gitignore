@@ -5,18 +5,19 @@
 *.swp
 .DS_Store
 .atom/
-.build/
 .buildlog/
 .history
 .svn/
-.swiftpm/
 migrate_working_dir/
 
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
-.idea/
+.idea/*
+!.idea/runConfigurations/
+
+pubspec.lock
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -27,11 +28,11 @@ migrate_working_dir/
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 /build/
-/coverage/
 
 # Symbolication related
 app.*.symbols
@@ -43,3 +44,19 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+missing_translations.txt
+/lib/gen/
+
+# Ignore generated files from Freezed and JsonSerializable
+**/*.g.dart
+**/*.freezed.dart
+/lib/src/core/di/service_locator.config.dart
+
+# Exceptions to above rules.
+ios/Podfile.lock
+ios/Podfile
+ios/build/
+
+# Ignore generated localization files
+lib/src/localization/flutter_gen/gen_l10n

@@ -1,8 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Only permissions needed for image picker -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    
     <application
         android:label="quick_pdf"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
+        <!-- FileProvider for sharing files -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
